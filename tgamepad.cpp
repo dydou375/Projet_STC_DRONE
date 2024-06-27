@@ -6,7 +6,7 @@ tGamepad::tGamepad()
 
 }
 
-QString tGamepad::gestion_joystick_leftX(double value)
+QString tGamepad::gestion_joystick_leftX(double value) //Methode pour aller a droite ou gauche selon la valeur du joystick
 {
     QString Cmd = "";
     //qDebug() << value << "www";
@@ -22,7 +22,7 @@ QString tGamepad::gestion_joystick_leftX(double value)
         return "";
 }
 
-QString tGamepad::gestion_joystick_leftY(double value)
+QString tGamepad::gestion_joystick_leftY(double value) //Methode pour avancer ou reculer en fonctione de la valeur du joystick
 {
     qDebug() << value << "xxx";
     if (value > 0)
@@ -33,29 +33,7 @@ QString tGamepad::gestion_joystick_leftY(double value)
         return "";
 }
 
-//QString tGamepad::gestion_joystick_rightX(double value)
-//{
-//    qDebug() << value;
-//    if (value > 0)
-//        return "cw 50";
-//    else if(value < 0)
-//        return "ccw 50";
-//    else
-//        return "stop";
-//}
-
-//QString tGamepad::gestion_joystick_rightY(double value)
-//{
-//    qDebug() << value;
-//    if (value > 0)
-//        return "up 50";
-//    else if(value < 0)
-//        return "down 50";
-//    else
-//        return "stop";
-//}
-
-QString tGamepad::on_button_Y(bool pressed)
+QString tGamepad::on_button_Y(bool pressed) //Methode pour prendre de l'altitude
 {
 
     if (pressed == true)
@@ -64,7 +42,7 @@ QString tGamepad::on_button_Y(bool pressed)
         return "";
 }
 
-QString tGamepad::on_button_A(bool pressed)
+QString tGamepad::on_button_A(bool pressed) //Methode pour perdre de l'altitude
 {
 
     if (pressed == true)
@@ -74,7 +52,7 @@ QString tGamepad::on_button_A(bool pressed)
 
 }
 
-QString tGamepad::on_button_B(bool pressed)
+QString tGamepad::on_button_B(bool pressed) //Methode pour tourner l'axe de rotation du drone dans le sens horaire
 {
 
     if (pressed == true)
@@ -83,7 +61,7 @@ QString tGamepad::on_button_B(bool pressed)
         return "";
 }
 
-QString tGamepad::on_button_X(bool pressed)
+QString tGamepad::on_button_X(bool pressed)//Methode pour tourner l'axe de rotation du drone dans le sens anti-horaire
 {
     if (pressed != false)
     return "ccw 50";
@@ -92,7 +70,7 @@ QString tGamepad::on_button_X(bool pressed)
 
 }
 
-QString tGamepad::on_button_R1(bool pressed)
+QString tGamepad::on_button_R1(bool pressed) //Methode pour décoller
 {
 
     if (pressed == true)
@@ -101,7 +79,7 @@ QString tGamepad::on_button_R1(bool pressed)
         return "";
 }
 
-QString tGamepad::on_button_L1(bool pressed)
+QString tGamepad::on_button_L1(bool pressed) //Methode pour atterir
 {
     if (pressed != false)
     return "land";
